@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import WriteSitcomStart from './WriteSitcomStart'
 
 const Hero = () => {
+    
+    const [writeSitcom, setWriteSitcom] = useState(false)
+    const startWriting = () => {
+        setWriteSitcom(true)
+        console.log(writeSitcom)
+    }
+    if (writeSitcom) {
+        return (
+            <WriteSitcomStart />
+        )
+    }
+    
+
     return (
         <section className="hero" id="home">
             <div className="hero-banner">
@@ -8,8 +22,9 @@ const Hero = () => {
                 <p>
                     Play along at home and write an episode of your favorite sitcom just like the BOIZ!
                 </p>
-                <a href="#play" className="btn hero-btn">start writing</a>
+                <button type="button" className="btn hero-btn" onClick={startWriting}>start writing</button>
             </div>
+
         </section>
     )
 }

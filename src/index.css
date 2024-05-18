@@ -141,7 +141,7 @@ p {
 }
 /* section */
 .section {
-  padding: 5rem 0;
+  padding: 1rem 0;
   scroll-margin-top: 4rem;
 }
 .section-title {
@@ -172,7 +172,7 @@ Hero
 */
 
 .hero {
-  min-height: 100vh;
+  min-height: 50rem;
   background: var(--clr-primary-5);
   display: flex;
   justify-content: center;
@@ -206,6 +206,33 @@ Hero
 }
 @media screen and (min-width: 768px) {
   .hero {
+    background: linear-gradient(rgb(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)),
+      url('./images/main.jpeg') center/cover no-repeat;
+  }
+  .hero-banner {
+    padding: 0;
+  }
+  .hero-banner p {
+    max-width: 45rem;
+  }
+}
+
+.sitcom-container {
+  min-height: 50rem;
+  background: var(--clr-primary-5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sitcom-header {
+  text-align: center;
+  color: var(--clr-white);
+  padding: 0 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .sitcom-container {
     background: linear-gradient(rgb(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)),
       url('./images/main.jpeg') center/cover no-repeat;
   }
@@ -404,6 +431,9 @@ Footer
 ===============
 */
 .footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   background: var(--clr-grey-1);
   text-align: center;
   padding-left: 2rem;
