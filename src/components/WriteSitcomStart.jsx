@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import { shows } from '../data'
+import { useGlobalContext } from '../context'
 
 
-const WriteSitcomStart = ({id, show}) => {
-    const handleClick = () => {
-      console.log(id)
-    }
+const WriteSitcomStart = () => {
+    const { handleShowSelected } = useGlobalContext()
     return (
     <section className='sitcom-container'>
       <div className='sitcom-header'>
@@ -15,7 +14,7 @@ const WriteSitcomStart = ({id, show}) => {
               type='button' 
               className='btn hero-btn' 
               show={show}
-              key={id} onClick={handleClick}>
+              key={id} onClick={handleShowSelected}>
                 {show}
             </button>
             

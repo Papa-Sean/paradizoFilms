@@ -23,10 +23,6 @@ export const plots = [
         id: 3,
         plot: "Two dates show up at the same restaurant"
     },
-    {
-        id: 4,
-        plot: "Miss a flight"
-    }
 ]
 
 export const shows = [

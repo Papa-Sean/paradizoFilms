@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import { useGlobalContext } from '../context'
 import WriteSitcomStart from './WriteSitcomStart'
+
 
 const Hero = () => {
     
-    const [writeSitcom, setWriteSitcom] = useState(false)
-    const startWriting = () => {
-        setWriteSitcom(true)
-        console.log(writeSitcom)
-    }
-    if (writeSitcom) {
+    const { handleGoToSelectSitcom, goToSelectSitcom } = useGlobalContext()
+    
+    if (goToSelectSitcom) {
         return (
             <WriteSitcomStart />
         )
@@ -22,7 +20,7 @@ const Hero = () => {
                 <p>
                     Play along at home and write an episode of your favorite sitcom just like the BOIZ!
                 </p>
-                <button type="button" className="btn hero-btn" onClick={startWriting}>start writing</button>
+                <button type="button" className="btn hero-btn" onClick={handleGoToSelectSitcom}>start writing</button>
             </div>
 
         </section>
