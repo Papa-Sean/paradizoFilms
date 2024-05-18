@@ -282,6 +282,7 @@ Hero
 .modal-container textarea{
   width: 80vw;
   height: 18vh;
+  padding: .5rem;
   font-size: 1.5rem;
   text-wrap: wrap;
 }
@@ -290,11 +291,62 @@ Hero
   position: absolute;
   top: .5rem;
   right: 1rem;
-  font-size: 2rem;
+  font-size: 1rem;
   background: transparent;
   border-color: transparent;
   cursor: pointer;
   color: darkred;
+}
+
+@media screen and (min-width: 768px) {
+    .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: grid;
+    place-items: center;
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .show-modal {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+    transition-property: opacity;
+    transition-duration: 2s;
+  }
+  .modal-container {
+    background: white;
+    width: 80vw;
+    height: 80vh;
+    border-radius: var(--borderRadius);
+    max-width: var(--fixed-width);
+    text-align: center;
+    display: grid;
+    place-items: center;
+    position: relative;
+  }
+  .modal-container textarea{
+    width: 70vw;
+    height: 18vh;
+    padding: 1rem;
+    font-size: 2rem;
+    text-wrap: wrap;
+  }
+  .close-modal-btn {
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    font-size: 2rem;
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    color: darkred;
+  }
 }
 
 /*
